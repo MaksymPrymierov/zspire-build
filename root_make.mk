@@ -18,12 +18,13 @@ ${EDITOR}: ${EDITOR}/ZSpireGameEd.pro ${MODE}_editor/Makefile
 ${MODE}_editor/Makefile : ${EDITOR}/ZSpireGameEd.pro
 	mkdir -p ${MODE}_editor
 	cd ${MODE}_editor; qmake ../${EDITOR}/ZSpireGameEd.pro
+	cp -rf ${EDITOR}/Shaders ${MODE}_editor
 
 clean: clean_${ENGINE} clean_${EDITOR}
 	@echo Clean has been completed.
 
 clean_${ENGINE}:
-	rm -rfv ${MODE}_engine
+	rm -rf ${MODE}_engine
 
 clean_${EDITOR}:
-	rm -rfv ${MODE}_editor
+	rm -rf ${MODE}_editor
